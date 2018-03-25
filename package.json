@@ -2,6 +2,7 @@
   "name": "qscaler",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rhaldkhein.github.io/qscaler",
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -12,5 +13,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0"
   }
 }
