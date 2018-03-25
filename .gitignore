@@ -1,0 +1,29 @@
+
+# === IGNORE ALL ===
+
+/*
+
+# === EXCEPT ===
+
+# Common Files
+!/.gitignore
+!/LICENSE
+!/*.json
+!/*.txt
+!/*.yml
+!/*.md
+!/*.js
+!/*rc
+!/Dockerfile
+
+# Project Files
+!/*.sublime-project
+
+!/build
+!/public
+!/src
+
+# === INGNORE AGAIN ===
+
+**/*.DS_Store
+/package-lock.json
