@@ -37,6 +37,8 @@ class NumberTextField extends Component {
           type="text"
           pattern="-?[0-9]*(\.[0-9]+)?"
           id={this.props.id || 'numtextfield_' + this.props.label}
+          value={this.props.value}
+          onChange={this.props.onChange}
         />
         <label
           className="mdl-textfield__label"
