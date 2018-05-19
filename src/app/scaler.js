@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NumberTextField } from '../ui/TextField';
 
-const stateProps = (state) => {
+const stateProps = state => {
   return {
     scale_by: state.scale_by,
     scale_payload: state.scale_payload
   };
 };
 
-const dispatchProps = (dispatch) => {
+const dispatchProps = dispatch => {
   return {
-    setScaleBy: (by) => {
+    setScaleBy: by => {
       dispatch({ type: 'SET_SCALE_BY', payload: by });
     },
     setScalePayload: (...args) => {
@@ -22,6 +22,7 @@ const dispatchProps = (dispatch) => {
 
 class Scaler extends Component {
   isActive(by, prefix = '') {
+    if (!this.props.scale_by && by === 'percent') return prefix + ' is-active';
     return prefix + (this.props.scale_by === by ? ' is-active' : '');
   }
   changePercent(e) {
@@ -42,7 +43,7 @@ class Scaler extends Component {
   }
   render() {
     return (
-      <div className="size-base mdl-shadow--4dp mw7 center mb4 br2 cf relative">
+      <div className="size-base mdl-shadow--4dp mw7 center mb4 br2 cf relative bg-white">
         <div className="fl w-10 bg-green absolute bottom-0 top-0 white br2 br--left">
           <h1>2</h1>
         </div>
@@ -69,7 +70,7 @@ class Scaler extends Component {
                 className="mr2 w-70 w-40-ns"
                 id="scalepercent"
                 label="Percent"
-                value={this.isActive('percent') ? this.props.scale_payload[0] || '' : ''}
+                value={this.isActive('percent') ? (this.props.scale_payload && this.props.scale_payload[0]) || '' : ''}
                 onChange={this.changePercent.bind(this)}
               />
               <span className="v-mid f4">%</span>

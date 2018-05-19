@@ -26,7 +26,7 @@ class Base extends Component {
   }
   render() {
     return (
-      <div className="size-base mdl-shadow--4dp mw7 center mb4 br2 cf relative">
+      <div className="size-base mdl-shadow--4dp mw7 center mb4 br2 cf relative bg-white">
         <div className="fl w-10 bg-blue absolute bottom-0 top-0 white br2 br--left">
           <h1>1</h1>
         </div>
@@ -49,7 +49,7 @@ class Base extends Component {
             onChange={this.changeHeight.bind(this)}
           />
           <span className="nowrap">
-            <span className="mdl-chip mdl-chip--contact ml3 v-mid">
+            <span className="mdl-chip mdl-chip--contact ml3-ns v-mid">
               <span className="mdl-chip__contact mdl-color--teal mdl-color-text--white">A</span>
               <span className="mdl-chip__text f5 ph2">{this.props.width * this.props.height}</span>
             </span>
